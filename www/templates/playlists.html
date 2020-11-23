@@ -1,0 +1,43 @@
+<ion-view view-title="Vucut Kitle Indeksi">
+  <ion-content>
+    
+    <!-- Bilgilendirme -->
+    <div class="card info-item">
+      <div class="item item-text-wrap text-center">
+        Enter your weight and length
+      </div>
+    </div>
+
+    <!-- Boy ve Kilo Bilgileri -->
+    <div class="list list-item">
+
+      <!-- Kilo Bilgisi -->
+      <div class="item range range-positive kilo-item">
+        <p>Your Weight</p>
+        <input type="range" ng-model="weight" name="volume" min="0" max="200" step="0.50" ng-change="calculate(weight,length) range-item">
+        <h3>{{weight}} kg</h3>
+      </div>
+
+      <!-- Boy Bilgisi -->
+      <div class="item range range-positive boy-item">
+        <p>Your Length</p>
+        <input type="range" ng-model="length" name="volume" min="0" max="2.5" step="0.05" ng-change="calculate(length,weight) range-item">
+        <h3>{{length}} m</h3>
+      </div>
+    </div>
+
+    <!-- Vucut Kitle Endeksi -->
+    <div class="card body-item">
+      <div class="item item-text-wrap text-center">
+       <h2> {{result}} BMI</h2>
+      </div>
+    </div>
+
+    <div class="card result-item">
+      <div class="item item-text-wrap text-center">
+       <h2> {{(result) < 25 ? 'Thin' : 'Normal'}}</h2>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
